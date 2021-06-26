@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
-
-
+gem 'bigdecimal', '1.3.5'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.11'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3', '~> 1.3.6'
+gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -28,8 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn'
-
+platforms :ruby do
+ gem 'unicorn'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -45,4 +47,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+gem 'puma'
+:wq
 #gem 'pg'
